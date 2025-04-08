@@ -3,11 +3,12 @@ import { useDispatch } from "react-redux";
 import { closeMenu } from "../utils/appSlice";
 import { useSearchParams, useParams } from "react-router-dom";
 import ComentsContainer from "./ComentsContainer";
+import LiveChat from "./LiveChat";
 const Watchpage = () => {
   //   const [searchParams] = useSearchParams();
   //   console.log(searchParams.get("v"));
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -15,17 +16,24 @@ const Watchpage = () => {
   }, []);
 
   return (
-    <div className="px-5">
-      <iframe
-        width="900"
-        height="450"
-        src={`https://www.youtube.com/embed/${id}`}
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
-      ></iframe>
+    <div className="px-5 w-full ">
+      <div className="flex">
+        <div>
+          <iframe
+            width="900"
+            height="450"
+            src={`https://www.youtube.com/embed/${id}`}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
+        <div className="w-full">
+          <LiveChat />
+        </div>
+      </div>
       <ComentsContainer />
     </div>
   );
