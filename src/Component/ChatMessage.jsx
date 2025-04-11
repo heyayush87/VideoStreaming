@@ -1,6 +1,6 @@
 import React from "react";
 
-const ChatMessage = ({ name, title }) => {
+const ChatMessage = ({ name, message }) => {
   return (
     <div className="flex items-center">
       <img
@@ -9,7 +9,7 @@ const ChatMessage = ({ name, title }) => {
         alt="logo"
       />
       <span className="font-bold px-2">{name}</span>
-      <span>{title}</span>
+      <span>{message}</span>
     </div>
   );
 };
