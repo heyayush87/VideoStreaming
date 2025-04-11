@@ -1,6 +1,6 @@
 import React from "react";
 
-const ChatMessage = ({ name, message }) => {
+const ChatMessage = ({ name, message, image }) => {
   return (
     <div className="flex items-center">
       <img
