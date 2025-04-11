@@ -19,7 +19,7 @@ const LiveChat = () => {
           message: generateRandomCompliment(),
         })
       );
-    }, 500);
+    }, 5000);
 
     return () => {
       clearInterval(i);
