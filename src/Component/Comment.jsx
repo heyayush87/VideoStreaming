@@ -2,7 +2,7 @@ import React from "react";
 
 const Comment = React.memo(({ data }) => {
   const { name, text } = data;
-  console.log("name is ", data.name);
+  // console.log("name is ", data.name);
   return (
     <div className="flex shadow-lg bg-gray-300 rounded-lg p-2 my-2">
       <div className="h-12 w-12">

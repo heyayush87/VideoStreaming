@@ -11,21 +11,13 @@ const VideoContainer = () => {
       const response = await fetch(Youtube_Api);
       if (!response.ok) throw new Error(`Response error: ${response.status}`);
       const data = await response.json();
-
-      // ✅ Filter out duplicate videos
-      setVideos((prev) => {
-        const existingIds = new Set(prev.map((v) => v.id?.videoId || v.id));
-        const newVideos = data.items.filter(
-          (item) => !existingIds.has(item.id?.videoId || item.id)
-        );
-        return [...prev, ...newVideos];
-      });
+      setVideos((prev) => [...prev, ...data.items]); // ✅ Append new videos
     } catch (error) {
       console.error("Error fetching videos:", error);
     }
   };
 
-  const handleScroll = () => {
+  const handlescroll = () => {
     if (
       window.innerHeight + window.scrollY >=
       document.body.offsetHeight - 300
@@ -36,8 +28,8 @@ const VideoContainer = () => {
 
   useEffect(() => {
     getvideo(); // Initial fetch
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handlescroll);
+    return () => window.removeEventListener("scroll", handlescroll);
   }, []);
 
   if (videos.length === 0) return <h1>Loading...</h1>;
@@ -45,10 +37,7 @@ const VideoContainer = () => {
   return (
     <div className="flex flex-wrap">
       {videos.map((video) => (
-        <Link
-          to={`/watch/${video.id?.videoId || video.id}`}
-          key={video.id?.videoId || video.id}
-        >
+        <Link to={`/watch/${video.id}`} key={video.id}>
           <Card info={video} />
         </Link>
       ))}
