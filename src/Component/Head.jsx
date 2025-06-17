@@ -30,8 +30,8 @@ const Head = () => {
 
   const getSearchSuggestions = async () => {
     try {
-      // Fetch from your Express proxy server instead of the YouTube API directly
-      const finalUrl = `http://localhost:5000/api/youtube-suggest?q=${encodeURIComponent(
+      // Use your deployed Render backend URL
+      const finalUrl = `https://youtube-m92h.onrender.com/api/youtube-suggest?q=${encodeURIComponent(
         searchQuery
       )}`;
       const response = await fetch(finalUrl);
