@@ -30,12 +30,13 @@ const Head = () => {
 
   const getSearchSuggestions = async () => {
     try {
-      // Direct fetch without proxy
-      const finalUrl = Youtube_Search_Api + encodeURIComponent(searchQuery);
+      // Fetch from your Express proxy server instead of the YouTube API directly
+      const finalUrl = `http://localhost:5000/api/youtube-suggest?q=${encodeURIComponent(
+        searchQuery
+      )}`;
       const response = await fetch(finalUrl);
       if (!response.ok) throw new Error("Failed to fetch suggestions");
       const data = await response.json();
-      // Defensive: ensure suggestions is always an array
       const arr = Array.isArray(data[1]) ? data[1] : [];
       setSuggestions(arr);
       dispatch(
