@@ -2,7 +2,7 @@
   https://youtube-five-neon.vercel.app/
 
 ## 📖 Overview
-  This Video Streaming is a single-page React application that replicates the core features of YouTube’s interface and user experience. Built using modern frontend tools like React, Redux Toolkit, and Tailwind CSS, it integrates with real YouTube APIs to fetch trending videos and offer intelligent search suggestions.
+  This FLUX PLAY is a single-page React application that replicates the core features of YouTube’s interface and user experience. Built using modern frontend tools like React, Redux Toolkit, and Tailwind CSS, it integrates with real YouTube APIs to fetch trending videos and offer intelligent search suggestions.
 
  • 𝐓𝐡𝐢𝐬 𝐩𝐫𝐨𝐣𝐞𝐜𝐭 𝐢𝐬 𝐚𝐥𝐥 𝐚𝐛𝐨𝐮𝐭 𝐟𝐞𝐚𝐭𝐮𝐫𝐞 𝐫𝐢𝐜𝐡𝐧𝐞𝐬𝐬 𝐫𝐚𝐭𝐡𝐞𝐫 𝐭𝐡𝐚𝐧 𝐔𝐈.
  
